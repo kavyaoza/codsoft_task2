@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI — Caption Studio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="logo"><i class="fas fa-pen-fancy"></i></div>
+      <div class="header-text">
+        <h1>AI · Creative Caption Studio</h1>
+        <p>Transform your images with poetic, artistic captions.</p>
+      </div>
+    </header>
+
+    <div class="main-content">
+      <!-- Upload Section -->
+      <div class="upload-section">
+        <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
+          <label class="upload-area" for="imageInput">
+            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+            <div class="upload-text">Click or Drop an image</div>
+            <div class="upload-hint">JPG • PNG • WEBP — max 5 MB</div>
+            <input type="file" name="image" id="imageInput" accept="image/*" hidden>
+          </label>
+
+          <div class="button-group">
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-magic"></i> Generate Caption
+            </button>
+            <button type="button" id="clearBtn" class="btn btn-secondary">
+              <i class="fas fa-trash-alt"></i> Clear
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Result Section -->
+      <div class="result-section">
+        <div class="image-preview {% if not uploaded_image %}placeholder{% endif %}" >
+          {% if uploaded_image %}
+            <img id="resultImage" src="{{ uploaded_image }}" alt="Uploaded Image">
+          {% else %}
+            <img id="resultImage" src="{{ url_for('static', filename='placeholder.png') }}" alt="Placeholder">
+          {% endif %}
+        </div>
+
+        <div class="captions-container">
+          <div class="captions-header">
+            <div class="captions-title">Creative Captions</div>
+          </div>
+
+          <div class="caption-list">
+            {% if captions %}
+              <ul id="captionList" style="list-style:none; padding:0; margin:0;">
+                {% for cap in captions %}
+                  <li class="caption-item">
+                    <div class="caption-text"><q>{{ cap }}</q></div>
+                    <div class="caption-source">— AI-generated creative caption</div>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <div id="captionText" class="hint" style="text-align:center; color:#777;">
+                Your creative caption will appear here.
+              </div>
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button id="copyCaptionBtn" class="btn-copy">
+            <i class="fas fa-copy"></i> Copy Captions
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const imageInput = document.getElementById('imageInput');
+    const resultImage = document.getElementById('resultImage');
+    const captionTextEl = document.getElementById('captionText');
+    const clearBtn = document.getElementById('clearBtn');
+
+    // Preview selected image
+    imageInput && imageInput.addEventListener('change', (e) => {
+      const f = e.target.files && e.target.files[0];
+      if (!f) return;
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        resultImage.src = ev.target.result;
+        if (captionTextEl && captionTextEl.classList.contains('hint')) {
+          captionTextEl.textContent = 'Your creative caption will appear here.';
+        }
+      };
+      reader.readAsDataURL(f);
+    });
+
+    // Clear button
+    clearBtn && clearBtn.addEventListener('click', () => {
+      resultImage.src = "{{ url_for('static', filename='placeholder.png') }}";
+      document.getElementById('imageInput').value = '';
+      if (captionTextEl) {
+        captionTextEl.textContent = 'Your creative caption will appear here.';
+        captionTextEl.className = 'hint';
+      }
+      document.getElementById('captionList')?.remove();
+    });
+
+    // Copy captions
+    document.getElementById('copyCaptionBtn').addEventListener('click', function () {
+      let allCaptions = "";
+      document.querySelectorAll("#captionList li").forEach(li => {
+        allCaptions += li.textContent.trim() + "\n";
+      });
+      if (allCaptions.trim() !== "") {
+        navigator.clipboard.writeText(allCaptions).then(() => {
+          const btn = document.getElementById('copyCaptionBtn');
+          btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+          setTimeout(() => { btn.innerHTML = '<i class="fas fa-copy"></i> Copy Captions'; }, 1500);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
