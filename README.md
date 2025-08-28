@@ -149,9 +149,10 @@ To be shared on LinkedIn tagging @codsoft
 
 ---
 
-## 👨‍💻 Author
+## **👨‍💻 Author**
 
 -   Name: *Kavya Oza*\
 -   Email: *kavyaoza54@gmail.com*\
 -   GitHub: [yourusername](https://github.com/kavyaoza)\
+
 -   LinkedIn: [your-linkedin-profile](https://linkedin.com/in/your-link)
