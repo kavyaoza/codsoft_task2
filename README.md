@@ -118,7 +118,7 @@ For **custom training**:
 ---
 
 ## 🎥 Demo Video
-👉 [Watch Demo Video]([https://www.linkedin.com](https://www.linkedin.com/posts/kavya-oza-a64220295_internship-ai-python-activity-7367153724504338432-RgNc?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEdmz-wB9BJG6LYEIQ_YaQ39UdhoqyMOS6g))  
+👉 [Watch Demo Video](https://www.linkedin.com/posts/kavya-oza-a64220295_internship-ai-python-activity-7367153724504338432-RgNc?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEdmz-wB9BJG6LYEIQ_YaQ39UdhoqyMOS6g)
 
 
 ## 📦 Requirements
@@ -153,8 +153,9 @@ To be shared on LinkedIn tagging @codsoft
 
 -   Name: *Kavya Oza*\
 -   Email: *kavyaoza54@gmail.com*\
--   GitHub: [Github Profile](https://github.com/kavyaoza)\
+-   GitHub: [Github Profile](https://github.com/kavyaoza)
 -   LinkedIn: [LinkedIn Profile](www.linkedin.com/in/kavya-oza-a64220295)
+
 
 
 
