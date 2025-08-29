@@ -123,7 +123,7 @@ Maintained proper GitHub repository (codsoft_task2)
 To be shared on LinkedIn tagging @codsoft
 
 ---
----
+
 ## 📸 Screenshots
 
 ### 🔹 Home Page (Before Upload)
@@ -144,6 +144,7 @@ To be shared on LinkedIn tagging @codsoft
 -   Email: *kavyaoza54@gmail.com*\
 -   GitHub: [Github Profile](https://github.com/kavyaoza)
 -   LinkedIn: [LinkedIn Profile](www.linkedin.com/in/kavya-oza-a64220295)
+
 
 
 
