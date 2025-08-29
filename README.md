@@ -106,6 +106,23 @@ For **custom training**:
 - Trained weights & tokenizer are saved (`caption_model_weights.h5`, `tokenizer.pkl`).  
 
 ---
+## 📦 Requirements
+
+The dependencies for this project are listed in **requirements.txt**:
+
+Install them with:
+
+bash
+Copy code
+pip install -r requirements.txt
+✅ Internship Requirement
+Task completed as part of CODSOFT AI/ML Internship
+
+Maintained proper GitHub repository (codsoft_task2)
+
+To be shared on LinkedIn tagging @codsoft
+
+---
 ---
 ## 📸 Screenshots
 
@@ -129,33 +146,6 @@ For **custom training**:
 -   LinkedIn: [LinkedIn Profile](www.linkedin.com/in/kavya-oza-a64220295)
 
 
-## 📦 Requirements
-
-The dependencies for this project are listed in **requirements.txt**:
-
-```txt
-Flask==2.2.5
-torch==2.0.1
-transformers==4.33.2
-Pillow==9.5.0
-numpy==1.24.3
-tqdm==4.65.0
-scikit-learn==1.2.2
-tensorflow==2.10.0
-
-Install them with:
-
-bash
-Copy code
-pip install -r requirements.txt
-✅ Internship Requirement
-Task completed as part of CODSOFT AI/ML Internship
-
-Maintained proper GitHub repository (codsoft_task2)
-
-To be shared on LinkedIn tagging @codsoft
-
----
 
 
 
