@@ -153,7 +153,8 @@ To be shared on LinkedIn tagging @codsoft
 
 -   Name: *Kavya Oza*\
 -   Email: *kavyaoza54@gmail.com*\
--   GitHub: (https://github.com/kavyaoza)\
--   LinkedIn: (www.linkedin.com/in/kavya-oza-a64220295)
+-   GitHub: [Github Profile](https://github.com/kavyaoza)\
+-   LinkedIn: [LinkedIn Profile](www.linkedin.com/in/kavya-oza-a64220295)
+
 
 
